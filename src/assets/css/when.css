@@ -1,6 +1,24 @@
-.main_col1 h1 {
-  font-size: 25px;
-  margin-top: 20px;
+.main_1 {
+  width: 100%;
+  height: 73vh;
+  background-image: url("https://i.pinimg.com/originals/d6/c5/0c/d6c50c14b024b4911764875dea9f47f1.jpg");
+  background-size: cover;
+}
+.main_col1_1 ul {
+  font-size: 30px;
+  margin-left: 10%;
+}
+.main_col1_1 h2 {
+  margin-left: 45px;
+  font-size: 20px;
+}
+.main_col1_1 li {
+  margin-top: 10px;
+  font-size: 20px;
   margin-left: 20px;
-  font-weight: 600;
+}
+
+.main_col1_1 {
+  width: 100%;
+  height: 100%;
 }
