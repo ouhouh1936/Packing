@@ -10,13 +10,13 @@ html(lang="en")
     
         header.header 
             each s  in storeList 
-                h1 #{s.type}
+                h1 디저트                                                                   
 
         main.main_2 
             each s  in storeList 
                 br
-                h1 #{s.name}
-                h1 #{s.type}
+                h1 가게이름 : #{s.name}
+                h1 종류 : #{s.type.typeName}
                 br
                 hr
 

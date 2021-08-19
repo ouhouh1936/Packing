@@ -1,4 +1,5 @@
 import Store from "../models/Store";
+import Type from "../models/Type";
 
 export const whenController = (req, res) => {
   res.render("layouts/when");
@@ -13,7 +14,11 @@ export const mainController = (req, res) => {
 ////////////////dessert///////////////////////
 export const dessertController = async (req, res) => {
   try {
-    const storeList = await Store.find({}, {});
+    const storeList = await Store.find({}, {}).populate({
+      model: Type,
+      path: "type",
+    });
+
     console.log(storeList);
     res.render("screens/dessert", { storeList: storeList });
   } catch (e) {
