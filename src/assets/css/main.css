@@ -18,47 +18,35 @@
 .menu .menu_col2 .menu_col2_col1,
 .menu .menu_col2 .menu_col2_col2,
 .menu .menu_col2 .menu_col2_col3 {
-  width: 20%;
-  height: 100%;
-
-  margin-top: 20%;
-  margin-left: 10px;
-  margin-bottom: 60px;
+  width: 16%;
+  height: 80%;
+  margin-left: 5%;
 }
 .menu .menu_col1 .menu_col1_col1 {
-  background-image: url("https://image.flaticon.com/icons/png/512/3496/3496528.png");
   background-size: cover;
+  background-image: url("https://image.flaticon.com/icons/png/512/3496/3496528.png");
 }
 .menu .menu_col1 .menu_col1_col2 {
-  background-image: url("https://image.flaticon.com/icons/png/512/4727/4727470.png");
   background-size: cover;
+  background-image: url("https://image.flaticon.com/icons/png/512/4727/4727470.png");
 }
 .menu .menu_col1 .menu_col1_col3 {
-  background-image: url("https://image.flaticon.com/icons/png/512/3187/3187880.png");
   background-size: cover;
+  background-image: url("https://image.flaticon.com/icons/png/512/3187/3187880.png");
 }
 .menu .menu_col1 .menu_col1_col4 {
-  background-image: url("https://image.flaticon.com/icons/png/512/1826/1826277.png");
   background-size: cover;
+  background-image: url("https://image.flaticon.com/icons/png/512/641/641871.png");
 }
-
 .menu .menu_col2 .menu_col2_col1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  background-image: url("https://image.flaticon.com/icons/png/512/5221/5221918.png");
   background-size: cover;
+  background-image: url("https://image.flaticon.com/icons/png/512/5221/5221918.png");
 }
 .menu .menu_col2 .menu_col2_col2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
   background-image: url("https://image.flaticon.com/icons/png/512/2090/2090214.png");
   background-size: cover;
 }
 .menu .menu_col2 .menu_col2_col3 {
-  background-image: url("https://image.flaticon.com/icons/png/512/3447/3447951.png");
+  background-image: url("https://image.flaticon.com/icons/png/512/5293/5293897.png");
   background-size: cover;
 }

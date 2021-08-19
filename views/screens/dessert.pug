@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="/css/styles.css")
+    body 
+    
+        header.header 
+            each s  in storeList 
+                h1 #{s.type}
+
+        main.main_2 
+            each s  in storeList 
+                br
+                h1 #{s.name}
+                h1 #{s.type}
+                br
+                hr
+
+        footer.footer 
+            h1 이 페이지에는 우아한형제들에서 
+            h1 제공한 배달의민족 폰트가 적용되어 있습니다.
