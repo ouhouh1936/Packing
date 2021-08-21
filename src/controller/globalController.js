@@ -18,9 +18,11 @@ export const dessertController = async (req, res) => {
       model: Type,
       path: "type",
     });
-
-    console.log(storeList);
-    res.render("screens/dessert", { storeList: storeList });
+    const newData = storeList.filter(
+      (storeList) => storeList.typeName !== "도시락"
+    );
+    console.log(newData);
+    res.render("screens/dessert", { storeList });
   } catch (e) {
     console.log(e);
   }
