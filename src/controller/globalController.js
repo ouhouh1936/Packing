@@ -1,10 +1,10 @@
-import Store from "../models/Store";
-import Type from "../models/Type";
+const Store = require("../models/Store");
+const Type = require("../models/Type");
 
-export const whenController = (req, res) => {
+const whenController = (req, res) => {
   res.render("layouts/when");
 };
-export const mainController = (req, res) => {
+const mainController = (req, res) => {
   res.render("main");
 };
 
@@ -12,22 +12,29 @@ export const mainController = (req, res) => {
 
 //////////////////////////////////////////////
 ////////////////dessert///////////////////////
-export const dessertController = async (req, res) => {
+const dessertController = async (req, res) => {
   try {
     const storeList = await Store.find({}, {}).populate({
       model: Type,
       path: "type",
     });
-    const newData = storeList.filter(
-      (storeList) => storeList.typeName !== "도시락"
-    );
+    const newData = storeList.filter((data) => data.type.typeName !== "도시락");
     console.log(newData);
-    res.render("screens/dessert", { storeList });
+    res.render("screens/dessert", { list: newData });
   } catch (e) {
     console.log(e);
   }
 };
 
-export const crudController = (req, res) => {
+const crudController = (req, res) => {
   res.render("crud");
 };
+
+const globalControllers = {
+  whenController,
+  mainController,
+  dessertController,
+  crudController,
+};
+
+module.exports = globalControllers;

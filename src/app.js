@@ -1,15 +1,15 @@
-import express from "express";
-import morgan from "morgan";
-import dotenv from "dotenv";
+const express = require("express");
+const morgan = require("morgan");
+const dotenv = require("dotenv");
 dotenv.config();
-import bodyParser from "body-parser";
-import path from "path";
-import globalRouter from "./router/globalRouter";
-import connect from "../db";
+const bodyParser = require("body-parser");
+const path = require("path");
+const globalRouter = require("./router/globalRouter");
+const connect = require("../db");
 connect();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.set("view engine", "pug");
 app.use(morgan(`dev`));

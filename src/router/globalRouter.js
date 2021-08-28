@@ -1,11 +1,11 @@
-import {
+const {
   mainController,
   whenController,
   dessertController,
   crudController,
-} from "../controller/globalController";
+} = require("../controller/globalController");
 
-import express from "express";
+const express = require("express");
 
 const globalRouter = express.Router();
 
@@ -14,4 +14,4 @@ globalRouter.get("/when", whenController);
 globalRouter.get("/crud", crudController);
 globalRouter.get("/dessert", dessertController);
 
-export default globalRouter;
+module.exports = globalRouter;

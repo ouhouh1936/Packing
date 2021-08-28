@@ -4,7 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        title 
         link(rel="stylesheet", href="/css/styles.css")
     body 
     
@@ -12,13 +12,9 @@ html(lang="en")
                 h1 디저트                                                                   
 
         main.main_2 
-            each s  in storeList 
+            each s  in list 
                 br
                 h1 가게이름 : #{s.name}
                 h1 종류 : #{s.type.typeName}
                 br
                 hr
-
-        footer.footer 
-            h1 이 페이지에는 우아한형제들에서 
-            h1 제공한 배달의민족 폰트가 적용되어 있습니다.
