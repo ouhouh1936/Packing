@@ -3,6 +3,8 @@ const {
   whenController,
   dessertController,
   crudController,
+  storeMenuController,
+  loginController,
 } = require("../controller/globalController");
 
 const express = require("express");
@@ -13,5 +15,8 @@ globalRouter.get("/", mainController);
 globalRouter.get("/when", whenController);
 globalRouter.get("/crud", crudController);
 globalRouter.get("/dessert", dessertController);
+
+globalRouter.post("/login", loginController);
+globalRouter.post("/d", storeMenuController);
 
 module.exports = globalRouter;
