@@ -1,0 +1,81 @@
+.main_3 {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(pink, plum);
+}
+.logo h1 {
+  margin-bottom: 100%;
+  font-size: 50px;
+}
+.mainBox h1 {
+  font-size: 30px;
+  color: #fff;
+}
+
+.mainBox form {
+  width: 90%;
+  height: 180px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 150px;
+  margin-left: 10px;
+}
+
+.loginLabel {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginLabel label {
+  width: 120px;
+  color: #888;
+
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+  padding-left: 10px;
+}
+
+.loginLabel input {
+  outline: none;
+  background: none;
+
+  width: 200px;
+  height: 30px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 0px 10px;
+
+  transition: 0.5s;
+}
+
+.loginLabel input:hover {
+  box-shadow: 2px 2px 2px rgb(44, 75, 91);
+}
+
+.mainBox input[type="submit"] {
+  outline: none;
+  border: 1px solid rgba(153, 153, 153, 0.365);
+  background: none;
+
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 5 00;
+}

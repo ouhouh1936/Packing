@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="/css/styles.css")
+    body 
+     section.pc__screen
+            p Just Only Possible Mobile Decice, You Need Use Smaller Screen Than Now
+        
+    section.mobile__screen 
+        main.main_3
+            logo.logo 
+                h1 SignIn
+            div.mainBox
+                form(action="/login" method="post")
+                    .loginLabel
+                        label ID
+                        input(type="text" name="input_id")
+                    .loginLabel
+                        label PASSWORD
+                        input(type="password" name="input_pass")
+                    input(type="submit" value="LOGIN")
+                        

@@ -1,15 +1,47 @@
-const Store = require("../models/Store");
 const Type = require("../models/Type");
+const User = require("../models/User");
 
 const whenController = (req, res) => {
   res.render("layouts/when");
 };
-const mainController = (req, res) => {
-  res.render("main");
-};
 
 const storeMenuController = (req, res) => {
   res.render("screens/boardWrite");
+};
+
+////////////Login/////////////
+
+const mainController = (req, res) => {
+  const loginFlag = req.userLoginFlag || false;
+
+  let isAuthenticated = false;
+
+  if (loginFlag) {
+    isAuthenticated = true;
+  }
+
+  if (isAuthenticated) {
+    homeController(req, res);
+  } else {
+    res.render("loginMain");
+  }
+};
+
+const homeController = async (req, res) => {
+  const sess = req.session;
+
+  if (!sess.userId) {
+    mainController(req, res);
+    return;
+  }
+
+  try {
+    const loginUser = await User.findOne({ _id: sess.userId });
+    res.render("loginMain", { list: loginUser });
+  } catch (e) {
+    console.log(e);
+    mainController(req, res);
+  }
 };
 const loginController = async (req, res) => {
   const sess = req.session;
@@ -32,6 +64,7 @@ const loginController = async (req, res) => {
     );
 
     req.userLoginFlag = loginFlag;
+
     mainController(req, res);
   } catch (e) {
     console.log(
@@ -65,11 +98,12 @@ const crudController = (req, res) => {
 
 const globalControllers = {
   whenController,
-  mainController,
+  homeController,
   dessertController,
   crudController,
   storeMenuController,
   loginController,
+  mainController,
 };
 
 module.exports = globalControllers;

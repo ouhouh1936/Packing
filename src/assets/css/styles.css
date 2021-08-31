@@ -2,17 +2,18 @@
 @import "./main.css";
 @import "./when.css";
 @import "./footer.css";
+@import "./login.css";
 
 @font-face {
-  font-family: "BMHANNAPro";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff")
+  font-family: "BMJUA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: "BMHANNAPro";
+  font-family: "BMJUA";
 }
 @media screen and (min-width: 450px) {
   .mobile__screen {
@@ -43,6 +44,8 @@ body {
     display: none;
   }
   .mobile__screen {
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
