@@ -1,5 +1,6 @@
 const Type = require("../models/Type");
 const User = require("../models/User");
+const Store = require("../models/Store");
 
 const whenController = (req, res) => {
   res.render("layouts/when");
@@ -34,15 +35,16 @@ const homeController = async (req, res) => {
     mainController(req, res);
     return;
   }
-
   try {
     const loginUser = await User.findOne({ _id: sess.userId });
-    res.render("loginMain", { list: loginUser });
+
+    res.render("main", { list: loginUser });
   } catch (e) {
     console.log(e);
     mainController(req, res);
   }
 };
+
 const loginController = async (req, res) => {
   const sess = req.session;
   let loginFlag = false;
@@ -84,26 +86,113 @@ const dessertController = async (req, res) => {
       model: Type,
       path: "type",
     });
-    const newData = storeList.filter((data) => data.type.typeName !== "도시락");
-    console.log(newData);
+    const newData = storeList.filter((data) => data.type.typeName === "디저트");
+
     res.render("screens/dessert", { list: newData });
   } catch (e) {
     console.log(e);
   }
 };
+////////////////snackBar///////////////////////
+const snackBarController = async (req, res) => {
+  try {
+    const storeList = await Store.find({}, {}).populate({
+      model: Type,
+      path: "type",
+    });
+    const newData = storeList.filter((data) => data.type.typeName === "분식");
 
-const crudController = (req, res) => {
-  res.render("crud");
+    res.render("screens/snackBar", { list: newData });
+  } catch (e) {
+    console.log(e);
+  }
+};
+////////////////fast///////////////////////
+const fastController = async (req, res) => {
+  try {
+    const storeList = await Store.find({}, {}).populate({
+      model: Type,
+      path: "type",
+    });
+    const newData = storeList.filter((data) => data.type.typeName === "패스트");
+
+    res.render("screens/fast", { list: newData });
+  } catch (e) {
+    console.log(e);
+  }
+};
+////////////////lunchBox///////////////////////
+const lunchBoxController = async (req, res) => {
+  try {
+    const storeList = await Store.find({}, {}).populate({
+      model: Type,
+      path: "type",
+    });
+    const newData = storeList.filter((data) => data.type.typeName === "도시락");
+
+    res.render("screens/lunchBox", { list: newData });
+  } catch (e) {
+    console.log(e);
+  }
+};
+////////////////pork///////////////////////
+const porkController = async (req, res) => {
+  try {
+    const storeList = await Store.find({}, {}).populate({
+      model: Type,
+      path: "type",
+    });
+    const newData = storeList.filter(
+      (data) => data.type.typeName === "족발.보쌈"
+    );
+
+    res.render("screens/pork", { list: newData });
+  } catch (e) {
+    console.log(e);
+  }
+};
+////////////////china///////////////////////
+const chinaController = async (req, res) => {
+  try {
+    const storeList = await Store.find({}, {}).populate({
+      model: Type,
+      path: "type",
+    });
+    const newData = storeList.filter((data) => data.type.typeName === "중국집");
+
+    res.render("screens/china", { list: newData });
+  } catch (e) {
+    console.log(e);
+  }
+};
+////////////////ggim///////////////////////
+const ggimController = async (req, res) => {
+  try {
+    const storeList = await Store.find({}, {}).populate({
+      model: Type,
+      path: "type",
+    });
+    const newData = storeList.filter((data) => data.type.typeName === "찜.탕");
+
+    res.render("screens/ggim", { list: newData });
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 const globalControllers = {
   whenController,
   homeController,
   dessertController,
-  crudController,
   storeMenuController,
   loginController,
   mainController,
+  snackBarController,
+  fastController,
+  lunchBoxController,
+  porkController,
+  chinaController,
+  ggimController,
 };
 
 module.exports = globalControllers;
