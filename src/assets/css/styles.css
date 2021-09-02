@@ -2,6 +2,7 @@
 @import "./main.css";
 @import "./when.css";
 @import "./login.css";
+@import "./crudBase.css";
 
 @font-face {
   font-family: "BMJUA";

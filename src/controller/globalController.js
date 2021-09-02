@@ -6,10 +6,6 @@ const whenController = (req, res) => {
   res.render("layouts/when");
 };
 
-const storeMenuController = (req, res) => {
-  res.render("screens/boardWrite");
-};
-
 ////////////Login/////////////
 
 const mainController = (req, res) => {
@@ -179,12 +175,41 @@ const ggimController = async (req, res) => {
     console.log(e);
   }
 };
+////////////////////////////////////////////////////////////////
+//////////////////////////crud//////////////////////////////////
+
+const crudBaseController = (req, res) => {
+  res.render("crudBase");
+};
+const storeCreateController = (req, res) => {
+  res.render("storeCreate");
+};
+
+const storeController = async (req, res) => {
+  const {
+    body: { sname, stype, smenu },
+  } = req;
+
+  try {
+    const result = await Store.create({
+      name: sname,
+      type: stype,
+      menus: smenu,
+    });
+    console.log("✅✅✅✅✅✅✅✅✅✅✅✅✅");
+    console.log(result);
+    console.log("✅✅✅✅✅✅✅✅✅✅✅✅✅");
+    res.render("main", { msg: "데이터가 추가되었습니다." });
+  } catch (e) {
+    console.log(e);
+  }
+  homeController(req, res);
+};
 
 const globalControllers = {
   whenController,
   homeController,
   dessertController,
-  storeMenuController,
   loginController,
   mainController,
   snackBarController,
@@ -193,6 +218,10 @@ const globalControllers = {
   porkController,
   chinaController,
   ggimController,
+  crudBaseController,
+  storeCreateController,
+
+  storeController,
 };
 
 module.exports = globalControllers;

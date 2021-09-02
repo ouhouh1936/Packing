@@ -5,6 +5,7 @@ dotenv.config();
 const bodyParser = require("body-parser");
 const path = require("path");
 const globalRouter = require("./router/globalRouter");
+
 const connect = require("../db");
 const expressSession = require("express-session");
 

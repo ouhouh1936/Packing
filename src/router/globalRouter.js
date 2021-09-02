@@ -1,3 +1,4 @@
+const express = require("express");
 const {
   mainController,
   whenController,
@@ -9,12 +10,13 @@ const {
   ggimController,
   snackBarController,
 
-  storeMenuController,
   loginController,
   homeController,
-} = require("../controller/globalController");
 
-const express = require("express");
+  crudBaseController,
+  storeCreateController,
+  storeController,
+} = require("../controller/globalController");
 
 const globalRouter = express.Router();
 
@@ -33,6 +35,11 @@ globalRouter.get("/ggim", ggimController);
 globalRouter.get("/snackBar", snackBarController);
 
 globalRouter.post("/login", loginController);
-globalRouter.post("/d", storeMenuController);
+
+/////////crud/////////////////
+globalRouter.get("/crudBase", crudBaseController);
+globalRouter.get("/sc", storeCreateController);
+
+globalRouter.post("base", storeController);
 
 module.exports = globalRouter;

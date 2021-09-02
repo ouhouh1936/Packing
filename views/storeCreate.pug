@@ -1,0 +1,22 @@
+extends ./crudBase.pug
+
+block crud 
+    div.createWrapper
+        h2 #{type} create page
+        form(action="/login" method="POST")
+            div.createWrapper__storeName
+                p 가게 이름
+                input(type="text" name="storeName" required) 
+
+            div.createWrapper__storeType
+                p 종류
+                select(name="storeType")
+                    option(value=false) --선택--
+                    option(value="디저트") 디저트
+                    option(value="분식") 분식
+                    option(value="패스트")  패스트
+                    option(value="도시락") 도시락
+                    option(value="족발.보쌈") 족발.보쌈
+                    option(value="중국집") 중국집
+                    option(value="찜.탕") 찜.탕
+            button.createWrapper__btn 등록하기 
